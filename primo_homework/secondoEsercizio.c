@@ -7,7 +7,7 @@
 
 
 int main(int argc , char *argv[]){
-	int file = open("/home/file.txt",O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
+	int file = open("./file.output",O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU);
 	printf("%d \n",file);
 	int rc = fork();
 	if(rc < 0){
