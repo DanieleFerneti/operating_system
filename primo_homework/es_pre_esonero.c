@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <unistd.h>
 
+
 #define N_RECORDS 10
 
 struct record {
