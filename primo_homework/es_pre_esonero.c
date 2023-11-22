@@ -73,7 +73,7 @@ struct record* leggi(char* path) {
 	}
 	struct stat stats;//definisco la struct dove andranno le statistiche
 	fstat(fd, &stats);//secondo parametro: puntatore ad una struct dove verranno messe tutte le statistiche all'interno del file
-	struct record *records = (struct record*) malloc(stats.st_size); //st_size : total size in byte del file
+	struct record* records = (struct record*) malloc(stats.st_size); //st_size : total size in byte del file
 	int n_records = stats.st_size/sizeof(struct record);//calcolo il numero dei records
 	for (int i=0; i<n_records; i++) {
 		read(fd, &records[i], sizeof(struct record));
@@ -89,7 +89,7 @@ int main(int argc, char** argv) {
 	}
 	char* path = argv[1];
 
-	struct record *records = genera(N_RECORDS);
+	struct record* records = genera(N_RECORDS);
 	stampa_records(records, N_RECORDS); //stampa dei numeri appena generati
 	scrivi(path, records, N_RECORDS);
 	free(records);
