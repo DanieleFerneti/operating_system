@@ -79,7 +79,7 @@ struct record* leggi(char* path) {
 		read(fd, &records[i], sizeof(struct record));
 	}
 	close(fd);
-	return records;	
+	return records;	 
 }
 
 int main(int argc, char** argv) {
